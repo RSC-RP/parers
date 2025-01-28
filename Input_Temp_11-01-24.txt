@@ -1,0 +1,45 @@
+Input file for amplicon information - DO NOT add new lines to this document, or spaces in your input. Beware of typos.
+>   Select Gene  (A6 / COII / COIII / CR3 / CR4 / CYb / MURF2 / ND3 / ND7 / ND8 / ND9 / RPS12)
+MURF2
+
+>   Forward Primer (This should be the portion that anneals to the amplicon only)
+ATAGAAAGGTATATAATCTATAATG
+
+>   Reverse Primer (Ditto above)
+GTCGTGTTTTTGATTTGTTATG
+
+>   Output Filename
+MURF2_example_output_for_RSC
+
+> Are your sequencing primers in "reverse" orientation?
+Y
+
+> How many sequences (starting at the most commonly seen sequence) do you want to analyze for the alignments?
+10
+
+> How many editing sites deep do you want to look at?
+10
+
+> UMI length?
+8
+
+> Define your output directory
+C:/Users/trodsh/Data/
+
+> Define the path to the folder housing BBMerge. bbmerge.sh is called out within the script, you just need to show where it is
+C:\Users\trodsh\AppData\Local\bbmap
+
+> Define the path to the MUSCLE application (.exe file)
+Z:/Stuart Lab/hpc/SCRIPTS/muscle5_1.exe
+
+> Define the path to R
+C:/Users/trodsh/R-4.4.0/bin/x64/Rscript.exe
+
+> Define path to folder containing R scripts
+Z:\Stuart Lab\hpc\SCRIPTS\PARERSv2_most_recent\R_for_cmd
+
+> List y-axis labels (in %) for difference bar graph. Warning: the range must encompass your data or else impacted data points will be excluded.
+-100, -90, -80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+
+> Y-axis increment for difference graphs (make sure this is consistent with labels).
+10

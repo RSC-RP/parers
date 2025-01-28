@@ -1,0 +1,8 @@
+Total Reads [135] Merged Reads
+Merged Reads [115] Primer Match
+Primer Match [115] Deduplication
+Deduplication [96] Non-U Match
+Total Reads [64] Did Not Merge
+Merged Reads [20] Primer Mismatch
+Primer Match [0] UMI Duplicates
+Deduplication [19] Non-U Mismatch
