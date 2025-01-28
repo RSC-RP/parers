@@ -24,19 +24,19 @@ Y
 8
 
 > Define your output directory
-C:/Users/trodsh/Data/
+/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/data
 
 > Define the path to the folder housing BBMerge. bbmerge.sh is called out within the script, you just need to show where it is
-C:\Users\trodsh\AppData\Local\bbmap
+/data/hps/assoc/private/rsc/user/gmorto/miniforge3/envs/parers/bin
 
 > Define the path to the MUSCLE application (.exe file)
-Z:/Stuart Lab/hpc/SCRIPTS/muscle5_1.exe
+/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/muscle
 
 > Define the path to R
-C:/Users/trodsh/R-4.4.0/bin/x64/Rscript.exe
+/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/Rscript
 
 > Define path to folder containing R scripts
-Z:\Stuart Lab\hpc\SCRIPTS\PARERSv2_most_recent\R_for_cmd
+/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/R_for_cmd
 
 > List y-axis labels (in %) for difference bar graph. Warning: the range must encompass your data or else impacted data points will be excluded.
 -100, -90, -80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100

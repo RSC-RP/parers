@@ -4,12 +4,12 @@
 # input the necessary information for points 1-7
 
 #1. Define the path to your R1 read files
-a1 = "Z:/Stuart Lab/HPC/2023_12_29_Carnes_A3CNvMGA_WTvL270R/Raw_fastq_files/input_data_for_RSC/truncated_MURF2_A3_WT_MGA_S5_R1_001.fastq"
-b1 = "Z:/Stuart Lab/HPC/2023_12_29_Carnes_A3CNvMGA_WTvL270R/Raw_fastq_files/input_data_for_RSC/truncated_MURF2_A3_L270R_MGA_S6_R1_001.fastq"
+a1 = "/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/input_data_for_RSC/truncated_MURF2_A3_WT_MGA_S5_R1_001.fastq"
+b1 = "/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/input_data_for_RSC/truncated_MURF2_A3_L270R_MGA_S6_R1_001.fastq"
 
 #2. Define the path to your R2 read files
-a2 = "Z:/Stuart Lab/HPC/2023_12_29_Carnes_A3CNvMGA_WTvL270R/Raw_fastq_files/input_data_for_RSC/truncated_MURF2_A3_WT_MGA_S5_R2_001.fastq"
-b2 = "Z:/Stuart Lab/HPC/2023_12_29_Carnes_A3CNvMGA_WTvL270R/Raw_fastq_files/input_data_for_RSC/truncated_MURF2_A3_L270R_MGA_S6_R2_001.fastq"
+a2 = "/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/input_data_for_RSC/truncated_MURF2_A3_WT_MGA_S5_R2_001.fastq"
+b2 = "/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/input_data_for_RSC/truncated_MURF2_A3_L270R_MGA_S6_R2_001.fastq"
 
 #3. Add all your R1 and R2 variables to pairwise lists
 R1_list = [a1, b1]
@@ -22,10 +22,10 @@ mutant_names = ["WT MGA", "L270R MGA"]
 control_sample = "WT MGA"
 
 #6. Define the path to your input file
-input_info = "O:/Lab stuff/Coding/Python/deep_sequencing_pipeline/PARERSv2_most_recent/Input_Temp_11-01-24.txt"
+input_info = "/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/Input_Temp_11-01-24.txt"
 
 #7. Provide the path to the FASTA file containing the raw amplicons
-maxi_genes = "Z:/Stuart Lab/hpc/2024_01_14_Davidge_A6_muts_MiSeq/pythonProject/SCRIPTS/AmpliconsRaw.fasta"
+maxi_genes = "/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/AmpliconsRaw.fasta"
 
 
 
@@ -269,11 +269,10 @@ for r1, r2, line_name in zip(R1_list, R2_list, mutant_names):
 
     # from strictest to loosest: xstrict, ustrict, vstrict, strict, default, loose, vloose, uloose, xloose
     command = [
-        "java",
-        "-ea",
-        "-cp",
-        path_to_bbmerge,
-        "bbmerge.sh",
+        # "java",
+        # "-ea",
+        # "-cp",
+        path_to_bbmerge + "/bbmerge.sh",
         "in1=" + r1,
         "in2=" + r2,
         "out=" + merged_output,
