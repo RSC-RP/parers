@@ -1,0 +1,16 @@
+# mamba env create -f parers.yml
+name: parers
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - r=4.4
+  - pip
+  - r-tidyverse
+  - bioconda::bbmap
+  - bioconda::muscle
+  - pip:
+    - pandas
+    - python-docx
+    - biopython
+    - xlsxwriter
