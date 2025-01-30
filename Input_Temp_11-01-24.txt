@@ -27,7 +27,7 @@ Y
 /data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/data
 
 > Define the path to the folder housing BBMerge. bbmerge.sh is called out within the script, you just need to show where it is
-/data/hps/assoc/private/rsc/user/gmorto/miniforge3/envs/parers/bin
+/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin
 
 > Define the path to the MUSCLE application (.exe file)
 /data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/muscle

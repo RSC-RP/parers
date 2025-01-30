@@ -1,4 +1,4 @@
-# mamba env create -f parers.yml
+# mamba env create --file parers.yml --prefix /data/hps/assoc/private/stuart/user/$USER/miniforge3/envs/parers
 name: parers
 channels:
   - conda-forge
