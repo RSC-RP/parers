@@ -7,6 +7,11 @@ From: rocker/tidyverse:latest
 
 %files
     parers.py /parers/parers
+    R_for_cmd/bargraphs_cmd_compatible.R /parers/R_for_cmd/bargraphs_cmd_compatible.R
+    R_for_cmd/bubble_plots_cmd_compatible.R /parers/R_for_cmd/bargraphs_cmd_compatible.R
+    R_for_cmd/difference_plot_cmd_compatible.R /parers/R_for_cmd/bargraphs_cmd_compatible.R
+    R_for_cmd/editing_event_comparison_cmd_compatible.R /parers/R_for_cmd/bargraphs_cmd_compatible.R
+    R_for_cmd/editing_extent_plot_cmd_compatible.R /parers/R_for_cmd/bargraphs_cmd_compatible.R
 
 %post -c /bin/bash
     # update package list
