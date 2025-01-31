@@ -6,7 +6,7 @@ From: rocker/tidyverse:latest
 # Python 3.12.3
 
 %files
-    PARERSv2_multi_cell_line_11-19-24.py /parers/parers
+    parers.py /parers/parers
 
 %post -c /bin/bash
     # update package list
