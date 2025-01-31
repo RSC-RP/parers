@@ -9,7 +9,7 @@ From: rocker/tidyverse:latest
     PARERSv2_multi_cell_line_11-19-24.py /parers/parers
 
 %post -c /bin/bash
-    # update list
+    # update package list
     apt-get update
 
     # install python packages for all users of the container
@@ -37,3 +37,11 @@ From: rocker/tidyverse:latest
     # add a new line to the standard Ubuntu terminal prompt
     # but still prefix with Apptainer so user knows they are in a container
     export PS1='\[\]Apptainer: \[\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+
+%labels
+    Authors: Glenn Morton
+    Version v0.0.1
+
+%help
+    This container is intended to run the Pipeline for Analysis of RNA Editing in RNA Sequences (PARERS) 
+    developed by the Ken Stuart's Lab at Seattle Childrens Hospital
