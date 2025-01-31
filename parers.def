@@ -44,4 +44,4 @@ From: rocker/tidyverse:latest
 
 %help
     This container is intended to run the Pipeline for Analysis of RNA Editing in RNA Sequences (PARERS) 
-    developed by the Ken Stuart's Lab at Seattle Childrens Hospital
+    developed by Ken Stuart's Lab at Seattle Childrens Hospital
