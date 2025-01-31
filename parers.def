@@ -1,0 +1,38 @@
+Bootstrap: docker
+From: rocker/tidyverse:latest
+# NOTE: base image includes Ubuntu, R, tidyverse
+# R version 4.4.2
+# Python 3.12.3
+
+%files
+    PARERSv2_multi_cell_line_11-19-24.py /parers/parers
+
+%post -c /bin/bash
+    # update list
+    apt-get update
+
+    # install python packages for all users of the container
+    apt install -y python3-pandas
+    apt install -y python3-python-docx
+    apt install -y python3-biopython
+    apt install -y python3-xlsxwriter
+
+    # since there are Ubuntu packages for bbmap and muscle, 
+    # use those for easier container management
+
+    # install bbmap https://sourceforge.net/projects/bbmap/
+    apt install -y bbmap  # BBMap version 39.06
+
+    # install muscle https://github.com/rcedgar/muscle
+    apt install -y muscle # muscle 5.2.linux64
+
+    # make script executable
+    chmod +x /parers/parers
+
+%environment
+    # add script to the path
+    export PATH="$PATH:/parers"
+
+    # add a new line to the standard Ubuntu terminal prompt
+    # but still prefix with Apptainer so user knows they are in a container
+    export PS1='\[\]Apptainer: \[\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
