@@ -2,7 +2,7 @@
 #### PARERSv2 as of 8-2-24 ####
 
 # Define the path to your input file
-input_info = "parers.cfg"
+input_info = "./parers.cfg"
 
 ## process input information that will apply to all cell lines ##
 
@@ -83,10 +83,10 @@ y_ax_labs = y_axis_labels.split(",") #changes the y-axis labels to a list. The n
 min_y_bound = y_ax_labs[0] #new 10/29
 max_y_bound = y_ax_labs[-1] #new 10/29
 output_directory_pre = lines[26].strip().replace("\\", "/")
-path_to_bbmerge = "/usr/share/bbmap"
-path_to_muscle = "/usr/bin/muscle"
-path_to_r = "/usr/local/bin/Rscript"
-path_to_r_scripts = "/parers/R_for_cmd"
+path_to_bbmerge = "/usr/share/bbmap" # "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin"
+path_to_muscle = "/usr/bin/muscle" # "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/muscle"
+path_to_r = "/usr/local/bin/Rscript" # "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/Rscript"
+path_to_r_scripts = "/parers/R_for_cmd" # ./R_for_cmd
 path_to_bar = path_to_r_scripts + "/bargraphs_cmd_compatible.R"
 path_to_bubble = path_to_r_scripts + "/bubble_plots_cmd_compatible.R"
 path_to_difference = path_to_r_scripts + "/difference_plot_cmd_compatible.R"
