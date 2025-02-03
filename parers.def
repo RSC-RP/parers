@@ -1,7 +1,8 @@
 Bootstrap: docker
-From: rocker/tidyverse:latest
+From: rocker/tidyverse:4.4.2
 # NOTE: base image includes Ubuntu, R, tidyverse
 # https://hub.docker.com/r/rocker/tidyverse/
+# Ubuntu 24.04.1 LTS
 # R version 4.4.2
 # Python 3.12.3
 
