@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#! /usr/bin/env python3
 #### PARERSv2 as of 8-2-24 ####
 
 # Define the path to your input file
@@ -46,28 +46,26 @@ with open(input_info, 'r') as file:
     else:
         print("File is empty or could not be read.")
 
-# Path to R1 read files
-a1 = lines[35].strip().replace("\\", "/")
-b1 = lines[36].strip().replace("\\", "/")
-
-# Path to R2 read files
-a2 = lines[39].strip().replace("\\", "/")
-b2 = lines[40].strip().replace("\\", "/")
-
 # Add all R1 and R2 variables to pairwise lists
-R1_list = [a1, b1]
-R2_list = [a2, b2]
+R1_list = []
+R2_list = []
+
+start_line = 44
+for i, line in enumerate(lines, start=0):
+    if i >= start_line:
+        # Path to R1, R2 read files
+        r1, r2 = [l.strip().replace("\\", "/") for l in line.split(",")]
+        R1_list.append(r1)
+        R2_list.append(r2)
 
 # Make a list of cell line names that correspond to the order of R1 and R2 lists
-r1_name = lines[43].strip()
-r2_name = lines[44].strip()
-mutant_names = [r1_name, r2_name]
+mutant_names = lines[38].strip().split(",")
 
 # Define control sample using its mutant name
-control_sample = lines[47].strip()
+control_sample = lines[35].strip()
 
 # Path to the FASTA file containing the raw amplicons
-maxi_genes = lines[50].strip().replace("\\", "/")
+maxi_genes = lines[41].strip().replace("\\", "/")
 
 gene = lines[2].strip()
 forward_primer = lines[5].strip()
@@ -86,7 +84,7 @@ output_directory_pre = lines[26].strip().replace("\\", "/")
 path_to_bbmerge = "/usr/share/bbmap" # "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin"
 path_to_muscle = "/usr/bin/muscle" # "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/muscle"
 path_to_r = "/usr/local/bin/Rscript" # "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/Rscript"
-path_to_r_scripts = "/parers/R_for_cmd" # ./R_for_cmd
+path_to_r_scripts = "/parers/R_for_cmd" # "./R_for_cmd"
 path_to_bar = path_to_r_scripts + "/bargraphs_cmd_compatible.R"
 path_to_bubble = path_to_r_scripts + "/bubble_plots_cmd_compatible.R"
 path_to_difference = path_to_r_scripts + "/difference_plot_cmd_compatible.R"
@@ -2570,6 +2568,7 @@ try:
 except subprocess.CalledProcessError as e:
     print("Error generating difference plots:", e)
 
+# remove Rplots.pdf
 
 # correct for case sensitivity and extra spaces in sort choice
 sort_choice = sort_choice.strip().lower()
