@@ -91,7 +91,9 @@ path_to_difference = path_to_r_scripts + "/difference_plot_cmd_compatible.R"
 path_to_edit_extent = path_to_r_scripts + "/editing_extent_plot_cmd_compatible.R"
 path_to_edit_event = path_to_r_scripts + "/editing_event_comparison_cmd_compatible.R"
 
-
+# function checking if we need to unpack input data
+def is_gzipped(path):
+    return path.endswith(".gz")
 
 today = datetime.today().strftime('%m-%d-%Y')
 sort_choice = "depth" # default to depth for now, can change to difference as needed
@@ -253,7 +255,8 @@ for r1, r2, line_name in zip(R1_list, R2_list, mutant_names):
     nont_output_aligned = os.path.join(temp_dir.name, "nont-alignments.txt")
 
     # determine the sequence run identifier string
-    with open(r1, "r") as fastq: # changed from gzip.open to just open for rsc on 11-25-24
+    open_fn = gzip.open if is_gzipped(r1) else open # choose whether to use gzip.open or just open
+    with open_fn(r1) as fastq:
         first_line = str(fastq.readline().strip())
     i1 = 0
     i2 = 0
@@ -297,7 +300,8 @@ for r1, r2, line_name in zip(R1_list, R2_list, mutant_names):
     merged_reads_list2 = list(SeqIO.parse(final_fasta, "fasta"))
 
     def count_fastq_items(filename):
-        with open(filename, 'rt') as f: # gzip.
+        open_fn = gzip.open if is_gzipped(filename) else open
+        with open_fn(filename, 'rt') as f: # applies gzip.open or open depending on value of open_fn
             line_count = sum(1 for line in f)
         return line_count // 4
 
