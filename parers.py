@@ -300,7 +300,8 @@ for r1, r2, line_name in zip(R1_list, R2_list, mutant_names):
     merged_reads_list2 = list(SeqIO.parse(final_fasta, "fasta"))
 
     def count_fastq_items(filename):
-      	with open_fn(filename, 'rt') as f: # applies gzip.open or open depending on value of open_fn
+        open_fn = gzip.open if is_gzipped(filename) else open
+        with open_fn(filename, 'rt') as f: # applies gzip.open or open depending on value of open_fn
             line_count = sum(1 for line in f)
         return line_count // 4
 
