@@ -15,6 +15,8 @@ python3 /parers/parers
 * copy output to lab RSS  
 cp -R /data/hps/assoc/private/stuart/data/parers/<output> /data/rss/helens/stuart_k/...
 
+
+
 # Run PARERS Non-Interactively
 
 * go to directory with parers.cfg configured for run  
@@ -27,7 +29,7 @@ cp /data/hps/assoc/private/stuart/parers.slurm ./
 nano parers.slurm
 
 * submit the job to the scheduler  
-sbatch --mail-user=<YOUR EMAIL> /data/hps/assoc/private/stuart/parers.slurm
+sbatch --mail-user=<YOUR EMAIL> parers.slurm
 
 __Note:__ if you don't want to specify --mail-user you can add it to #SBATCH list at top of your parers.slurm
 
