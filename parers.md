@@ -43,4 +43,4 @@ __WARNING:__ You are now running the parers pipeline non-interactively. This mea
 scancel <jobID>
 
 * After your job is done you can check resources consumed if you would like  
-sedd <jobID>
+seff <jobID>
