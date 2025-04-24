@@ -30,7 +30,7 @@ It is recommended to use either of these as a template and modify for your sampl
 ### Build
 Provided is [`parers.def`](./parers.def) which is an [Apptainer](https://apptainer.org/docs/user/main/index.html) definition file.
 ``` bash
-sudo apptainer build parers.sif
+sudo apptainer build parers.sif parers.def
 ```
 ### Open interactive shell inside the container
 Once built, launch the container and ensure the directories mentioned in `parers.cfg` are in the [bind paths](https://apptainer.org/docs/user/main/bind_paths_and_mounts.html) for the container.
