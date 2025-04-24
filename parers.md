@@ -10,7 +10,7 @@ apptainer shell --bind /data/hps/assoc/ /data/hps/assoc/private/stuart/container
 cd <path>
 
 * run pipeline  
-python3 /parers/parers
+python3 /parers/parers.py
 
 * copy output to lab RSS  
 cp -R /data/hps/assoc/private/stuart/data/parers/<output> /data/rss/helens/stuart_k/...
