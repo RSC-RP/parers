@@ -1,4 +1,9 @@
 # Pipeline for Analysis of RNA Editing in RNA Sequences (PARERS)
+Authors: Rodshagan, Tyler; Davidge, Brittney; Carnes, Jason; Morton, Glenn
+Maintainer: Rodshagan, Tyler
+Stuart Lab, Center for Global Infectious Disease
+Research Scientific Computing
+Seattle Childrens Research Institute
 
 ## Environmental Dependencies
 - Python (3.12+ with pandas, python-docx, biopython, xlsxwriter)
