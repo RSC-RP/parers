@@ -81,14 +81,10 @@ y_ax_labs = y_axis_labels.split(",") #changes the y-axis labels to a list. The n
 min_y_bound = y_ax_labs[0] #new 10/29
 max_y_bound = y_ax_labs[-1] #new 10/29
 output_directory_pre = lines[26].strip().replace("\\", "/")
-path_to_bbmerge = "/usr/share/bbmap"
+path_to_bbmerge = "/usr/share/bbmap/bbmerge.sh"
 path_to_muscle = "/usr/bin/muscle"
 path_to_r = "/usr/local/bin/Rscript"
 path_to_r_scripts = "/parers/R_for_cmd"
-# path_to_bbmerge = "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin" 
-# path_to_muscle = "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/muscle"
-# path_to_r = "/data/hps/assoc/private/stuart/user/gmorto/miniforge3/envs/parers/bin/Rscript"
-# path_to_r_scripts = "/data/hps/assoc/private/stuart/user/gmorto/git/CPSTUAR/stuart_parers/R_for_cmd"
 path_to_bar = path_to_r_scripts + "/bargraphs_cmd_compatible.R"
 path_to_bubble = path_to_r_scripts + "/bubble_plots_cmd_compatible.R"
 path_to_difference = path_to_r_scripts + "/difference_plot_cmd_compatible.R"
@@ -277,7 +273,7 @@ for r1, r2, line_name in zip(R1_list, R2_list, mutant_names):
         # "java",
         # "-ea",
         # "-cp",
-        path_to_bbmerge + "/bbmerge.sh",
+        path_to_bbmerge,
         "in1=" + r1,
         "in2=" + r2,
         "out=" + merged_output,
