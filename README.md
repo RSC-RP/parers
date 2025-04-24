@@ -1,15 +1,69 @@
-PARERSv2 WIP as of 11-25-24
+# Pipeline for Analysis of RNA Editing in RNA Sequences (PARERS)
 
-What you need:
-- Python
-- R
-- BBTools suite
-- Java (dependecy for BBMerge)
-- MUSCLE alignment software (script runs from command line)
-- AmpliconsRaw input file (provided)
-- InputTemp input file (template provided)
-- R1 and R2 sequencing files (folder with example files has been provided)
-  - The files I have provided are truncated versions of the actual read files we got off the sequencer. Each contains 200 of the original ~1,000,000 sequences. I uploaded truncated versions of the files to speed up processing (for two files took 18 seconds on my work computer) and because even the zipped files far exceed the 25 mb limit GitHub will let me upload. I have uploaded the output folder I generated when I ran these two sets of data so you can compare your outputs. 
+## Environmental Dependencies
+- Python (3.12+ with pandas, python-docx, biopython, xlsxwriter)
+- R (4.4 with tidyverse)
+- BBMap for BBMerge
+- MUSCLE alignment software
+
+You also need:
+- AmpliconsRaw input file (fasta)
+- R1 and R2 sequencing files
+  - There is test_data provided as examples
+  - [`curated`](./test_data/curated/) contains synthetic examples around the A6 gene to demonstrate each type of editing event.
+  - [`truncated`](./test_data/truncated/) contains 200 of an original ~1,000,000 sequences from MURF2 gene.
+- `parer.cfg` - a configuration file that informs the pipeline on how to run the sample(s)
+
+## Apptainer
+### Build
+Provided is [`parers.def`](./parers.def) which is an [Apptainer](https://apptainer.org/docs/user/main/index.html) definition file.
+``` bash
+sudo apptainer build parers.sif
+```
+### Open interactive shell inside the container
+Once built, launch the container and ensure the directories mentioned in `parers.cfg` are in the [bind paths](https://apptainer.org/docs/user/main/bind_paths_and_mounts.html) for the container.
+``` bash
+apptainer shell --bind /path/to/include parers.sif
+```
+### Run the pipeline on your configured sample in the container
+The PARERS pipeline can be run by going to the directory with your `parers.cfg` and then running `python3 /parers/parers`.
+``` bash
+cd /path/to/parers.cfg
+python3 /parers/parers
+```
+
+## Conda/Mamba
+### Setup
+Also provided is a [`parers.yml`](./env/parers.yml) so you can [create the parers conda or mamba environment from yml file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
+
+In order to set up the script to run in your environment, you need to tell it where somethings are:
+- `bbmerge.sh` script
+- `muscle` binary
+- `Rscript` binary
+- `R_for_cmd` directory
+
+Activate your parers conda environment that was created from the [`parers.yml`](./env/parers.yml) in the step.
+Now you will be able to use `whereis` to find the full path to `bbmerge.sh` script and each of the `muscle` and `Rscript` binaries.
+``` bash
+whereis bbmerge.sh
+whereis muscle
+whereis Rscript
+```
+You also need to note the full path of the `R_for_cmd` directory.
+
+You will need to edit the following variables in [`parers.py](./parers.py) with the appropriate paths:
+``` python
+path_to_bbmerge = "/path/to/bbmerge.sh"
+path_to_muscle = "/path/to/muscle"
+path_to_r = "/path/to/Rscript"
+path_to_r_scripts = "/path/to/R_for_cmd"
+```
+### Run the pipeline on your configured sample in the conda/mamba environment
+The PARERS pipeline can be run by going to the directory with your `parers.cfg` and then running `python3 /parers/parers`.
+``` bash
+cd /path/to/parers.cfg
+python /path/to/parers.py
+```
 
 User guide in brief:
 1. Download the dependencies listed above plus python and R packages listed in "environment_versions_TR_BD_JC_11-22-24"
