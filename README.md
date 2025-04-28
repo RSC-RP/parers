@@ -8,8 +8,8 @@ Maintainer: Rodshagen, Tyler
 ## Environmental Dependencies
 - Python (3.12+ with pandas, python-docx, biopython, xlsxwriter)
 - R (4.4 with tidyverse)
-- BBMap for BBMerge
-- MUSCLE alignment software
+- [BBMap](https://sourceforge.net/projects/bbmap/) for BBMerge
+- [MUSCLE](https://github.com/rcedgar/muscle) alignment software
 
 You also need:
 - [`AmpliconsRaw`](./test_data/AmpliconsRaw.fasta) input file (fasta)
