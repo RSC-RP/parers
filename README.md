@@ -1,6 +1,6 @@
 # Pipeline for Analysis of RNA Editing in RNA Sequences (PARERS)
-Authors: Rodshagan, Tyler; Davidge, Brittney; Carnes, Jason; Morton, Glenn  
-Maintainer: Rodshagan, Tyler  
+Authors: Rodshagen, Tyler; Davidge, Brittney; Carnes, Jason; Morton, Glenn  
+Maintainer: Rodshagen, Tyler  
 Stuart Lab, Center for Global Infectious Disease  
 Research Scientific Computing  
 Seattle Childrens Research Institute  
@@ -12,7 +12,7 @@ Seattle Childrens Research Institute
 - MUSCLE alignment software
 
 You also need:
-- AmpliconsRaw input file (fasta)
+- [`AmpliconsRaw`](./test_data/AmpliconsRaw.fasta) input file (fasta)
 - R1 and R2 sequencing files
   - There is test_data provided as examples
   - [`curated`](./test_data/curated/) contains synthetic examples around the A6 gene to demonstrate each type of editing event.
