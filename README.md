@@ -1,9 +1,9 @@
 # Pipeline for Analysis of RNA Editing in RNA Sequences (PARERS)
 Authors: Rodshagen, Tyler; Davidge, Brittney; Carnes, Jason; Morton, Glenn  
 Maintainer: Rodshagen, Tyler  
-Stuart Lab, Center for Global Infectious Disease  
-Research Scientific Computing  
-Seattle Childrens Research Institute  
+[Stuart Lab](https://www.seattlechildrens.org/research/centers-programs/global-infectious-disease-research/research-areas-and-labs/stuart-lab/), [Center for Global Infectious Disease](https://www.seattlechildrens.org/research/centers-programs/global-infectious-disease-research/research-areas-and-labs/)  
+(Research Scientific Computing)[https://github.com/RSC-RP]  
+(Seattle Childrens Research Institute)[https://www.seattlechildrens.org/research/research-institute/]  
 
 ## Environmental Dependencies
 - Python (3.12+ with pandas, python-docx, biopython, xlsxwriter)
