@@ -2,8 +2,8 @@
 Authors: Rodshagen, Tyler; Davidge, Brittney; Carnes, Jason; Morton, Glenn  
 Maintainer: Rodshagen, Tyler  
 [Stuart Lab](https://www.seattlechildrens.org/research/centers-programs/global-infectious-disease-research/research-areas-and-labs/stuart-lab/), [Center for Global Infectious Disease](https://www.seattlechildrens.org/research/centers-programs/global-infectious-disease-research/research-areas-and-labs/)  
-(Research Scientific Computing)[https://github.com/RSC-RP]  
-(Seattle Childrens Research Institute)[https://www.seattlechildrens.org/research/research-institute/]  
+[Research Scientific Computing](https://github.com/RSC-RP)  
+[Seattle Childrens Research Institute](https://www.seattlechildrens.org/research/research-institute/  )
 
 ## Environmental Dependencies
 - Python (3.12+ with pandas, python-docx, biopython, xlsxwriter)
