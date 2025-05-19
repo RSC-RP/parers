@@ -50,7 +50,7 @@ with open(input_info, 'r') as file:
 R1_list = []
 R2_list = []
 
-start_line = 44
+start_line = 45
 for i, line in enumerate(lines, start=0):
     if i >= start_line:
         # Path to R1, R2 read files
@@ -59,28 +59,28 @@ for i, line in enumerate(lines, start=0):
         R2_list.append(r2)
 
 # Make a list of cell line names that correspond to the order of R1 and R2 lists
-mutant_names = lines[38].strip().split(",")
+mutant_names = lines[39].strip().split(",")
 
 # Define control sample using its mutant name
-control_sample = lines[35].strip()
+control_sample = lines[36].strip()
 
 # Path to the FASTA file containing the raw amplicons
-maxi_genes = lines[41].strip().replace("\\", "/")
+maxi_genes = lines[42].strip().replace("\\", "/")
 
 gene = lines[2].strip()
 forward_primer = lines[5].strip()
 reverse_primer = lines[8].strip()
 outputfilename = lines[11].strip()
-seq_orientation = lines[14].strip().upper()
-cir_depth = int(lines[17].strip())
-depth2 = int(lines[20].strip())
-barcode_length = int(lines[23].strip())
-y_axis_labels = lines[29].strip() #will still need to change this into a list to be converted for R
-y_axis_increment = lines[32].strip()
+seq_orientation = lines[15].strip().upper()
+cir_depth = int(lines[18].strip())
+depth2 = int(lines[21].strip())
+barcode_length = int(lines[24].strip())
+y_axis_labels = lines[30].strip() #will still need to change this into a list to be converted for R
+y_axis_increment = lines[33].strip()
 y_ax_labs = y_axis_labels.split(",") #changes the y-axis labels to a list. The next step takes the min and max values and converts to integers
 min_y_bound = y_ax_labs[0] #new 10/29
 max_y_bound = y_ax_labs[-1] #new 10/29
-output_directory_pre = lines[26].strip().replace("\\", "/")
+output_directory_pre = lines[27].strip().replace("\\", "/")
 path_to_bbmerge = "/usr/share/bbmap/bbmerge.sh"
 path_to_muscle = "/usr/bin/muscle"
 path_to_r = "/usr/local/bin/Rscript"
