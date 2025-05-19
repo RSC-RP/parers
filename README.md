@@ -63,7 +63,7 @@ whereis Rscript
 ```
 You also need to note the full path of the `R_for_cmd` directory.
 
-You will need to edit the following variables in [`parers.py](./parers.py) with the appropriate paths:
+You will need to edit the following variables in [`parers.py`](./parers.py) with the appropriate paths:
 ``` python
 path_to_bbmerge = "/path/to/bbmerge.sh"
 path_to_muscle = "/path/to/muscle"
