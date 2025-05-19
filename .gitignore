@@ -2,3 +2,7 @@ data/
 Rplots.pdf
 parers.sif
 test_out/
+test_data/curated/parers.slurm
+test_data/truncated/parers.slurm
+test_data/curated/slurm*.out
+test_data/truncated/slurm*.out
