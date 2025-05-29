@@ -1,5 +1,5 @@
-# Pipeline for Analysis of RNA Editing in RNA Sequences (PARERS)
-Authors: Rodshagen, Tyler; Davidge, Brittney; Carnes, Jason; Morton, Glenn  
+# Pipeline Analyzing RNA Editing RNA Sequencing (PARERS)
+Authors: Rodshagen, Tyler; Tracy, Maxwell; Davidge, Brittney; Carnes, Jason; Morton, Glenn  
 Maintainer: Rodshagen, Tyler  
 [Stuart Lab](https://www.seattlechildrens.org/research/centers-programs/global-infectious-disease-research/research-areas-and-labs/stuart-lab/), [Center for Global Infectious Disease](https://www.seattlechildrens.org/research/centers-programs/global-infectious-disease-research/research-areas-and-labs/)  
 [Research Scientific Computing](https://github.com/RSC-RP)  
